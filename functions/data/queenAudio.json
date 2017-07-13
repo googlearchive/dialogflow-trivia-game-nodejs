@@ -1,0 +1,9 @@
+{
+  "AUDIO_CALCULATING" : [ "QueenTemplateCalc1.ogg", "QueenTemplateCalc2.ogg" ],
+  "AUDIO_CORRECT" : [ "QueenTemplateCorrect1.ogg", "QueenTemplateCorrect2.ogg" ],
+  "AUDIO_DING" : [ "QueenTemplateTriviaDing.ogg" ],
+  "AUDIO_GAME_INTRO" : [ "QueenTemplateIntro1.ogg" ],
+  "AUDIO_GAME_OUTRO" : [ "QueenTemplateOutro1.ogg", "QueenTemplateOutro2.ogg" ],
+  "AUDIO_INCORRECT" : [ "QueenTemplateWrong1.ogg" ],
+  "AUDIO_ROUND_ENDED" : [ "QueenTemplateEndOfRound2.ogg" ]
+}

@@ -1,0 +1,9 @@
+{
+  "AUDIO_CALCULATING" : [ "TeacherTemplateCalculatorSoundLong.ogg", "TeacherTemplateCalculatorSoundShort.ogg" ],
+  "AUDIO_CORRECT" : [ "TeacherTemplateCorrectYaaas.ogg", "TeacherTemplateCorrectDing.ogg", "TeacherTemplateCorrectOooo.ogg", "TeacherTemplateCorrectYouGotIt.ogg" ],
+  "AUDIO_DING" : [ "TeacherTemplateQuestionAskedDing.ogg" ],
+  "AUDIO_GAME_INTRO" : [ "TeacherTemplateIntroMusicFadeOut.ogg", "TeacherTemplateIntroMusicApplause.ogg", "TeacherTemplateIntroMusicShorterEdit.ogg", "TeacherTemplateIntroMusicNormal.ogg", "TeacherTemplateIntroMusicApplauseShorter.ogg" ],
+  "AUDIO_GAME_OUTRO" : [ "TeacherTemplateOutroMusic.ogg", "TeacherTemplateOutroMusicApplause.ogg" ],
+  "AUDIO_INCORRECT" : [ "TeacherTemplateIncorrectGasp.ogg", "TeacherTemplateIncorrectBritishWhat.ogg", "TeacherTemplateIncorrectBuzzOhNo.ogg", "TeacherTemplateIncorrectGross.ogg", "TeacherTemplateIncorrectOoohAwkLaugh.ogg", "TeacherTemplateBuzz.ogg" ],
+  "AUDIO_ROUND_ENDED" : [ "TeacherTemplateMagicChimeShortLouder.ogg" ]
+}

@@ -1,0 +1,9 @@
+{
+  "AUDIO_CALCULATING" : [ "RobotTemplateSoundsCalc1.ogg", "RobotTemplateSoundsCalc2.ogg", "RobotTemplateSoundsCalc3.ogg" ],
+  "AUDIO_CORRECT" : [ "RobotTemplateCorrectDing1.ogg", "RobotTemplateCorrectDing2.ogg" ],
+  "AUDIO_DING" : [ "RobotTemplateTriviaDing.ogg", "RobotTemplateTriviaDing2.ogg" ],
+  "AUDIO_GAME_INTRO" : [ "RobotIntroShortened1.ogg", "RobotIntroShortened2.ogg" ],
+  "AUDIO_GAME_OUTRO" : [ "RobotOutroShortenedv1.ogg", "RobotOutroShortenedv2.ogg" ],
+  "AUDIO_INCORRECT" : [ "RobotTemplateIncorrectBuzz1.ogg" ],
+  "AUDIO_ROUND_ENDED" : [ "RobotTemplateEndOfRound.ogg" ]
+}
