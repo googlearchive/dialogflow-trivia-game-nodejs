@@ -25,7 +25,7 @@ You can also try out a hosted version of this game at [https://triviatemplate.co
 1. Click *View* to open the Actions on Google simulator.
 1. Type `Talk to my test app` in the simulator, or say `OK Google, talk to my test app` to any Actions on Google enabled device signed into your developer account.
 
-For more detailed information on deployment, see the [documentation](https://developers.google.com/actions/samples/).
+For more detailed information on deployment, see the [documentation](https://developers.google.com/actions/apiai/deploy-fulfillment).
 
 ## References and How to report bugs
 * Actions on Google documentation: [https://developers.google.com/actions/](https://developers.google.com/actions/).
