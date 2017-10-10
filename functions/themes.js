@@ -21,7 +21,7 @@
 // Logging dependencies
 const winston = require('winston');
 const logger = winston.loggers.get('DEFAULT_LOGGER');
-const logObject = require('./utils').logObject;
+const { logObject } = require('./utils');
 const utils = require('./utils');
 
 const THEME_TYPES = {

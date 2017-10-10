@@ -17,13 +17,21 @@
  * Trivia game fulfillment logic
  */
 
-const HOSTING_URL = 'https://<YOUR_PROJECT_ID>.firebaseapp.com';
-
 process.env.DEBUG = 'actions-on-google:*';
-const ApiAiApp = require('actions-on-google').ApiAiApp;
+const { DialogflowApp } = require('actions-on-google');
 const functions = require('firebase-functions');
 const firebaseAdmin = require('firebase-admin');
-firebaseAdmin.initializeApp(functions.config().firebase);
+
+const firebaseConfig = functions.config().firebase;
+firebaseAdmin.initializeApp(firebaseConfig);
+
+/**
+ * (Optional) Change this to the url of your custom hosting site
+ * By default, it uses the Firebase hosting authDomain as the root url
+ */
+const CUSTOM_HOSTING_URL = '';
+
+const HOSTING_URL = CUSTOM_HOSTING_URL || `https://${firebaseConfig.authDomain}`;
 
 // Logging dependencies
 const winston = require('winston');
@@ -36,20 +44,16 @@ winston.loggers.add('DEFAULT_LOGGER', {
   }
 });
 const logger = winston.loggers.get('DEFAULT_LOGGER');
-const logObject = require('./utils').logObject;
+const { logObject } = require('./utils');
 logger.transports.console.level = 'debug';
 
 const Ssml = require('./ssml').SSML;
-const sprintf = require('sprintf-js').sprintf;
+const { sprintf } = require('sprintf-js');
 const utils = require('./utils');
 
-const PROMPT_TYPES = require('./themes').PROMPT_TYPES;
-const AUDIO_TYPES = require('./themes').AUDIO_TYPES;
-const THEME_TYPES = require('./themes').THEME_TYPES;
-const Themes = require('./themes').Themes;
+const { Themes, PROMPT_TYPES, AUDIO_TYPES, THEME_TYPES } = require('./themes');
 
-const generateSynonyms = require('./utils').generateSynonyms;
-const getSynonyms = require('./utils').getSynonyms;
+const { generateSynonyms, getSynonyms } = require('./utils');
 
 const MAIN_INTENT = 'game.start';
 const VALUE_INTENT = 'game.choice.value';
@@ -120,7 +124,7 @@ exports.triviaGame = functions.https.onRequest((request, response) => {
     body: JSON.stringify(request.body)
   }));
 
-  const app = new ApiAiApp({request, response});
+  const app = new DialogflowApp({request, response});
   const themes = new Themes();
 
   const userId = app.getUser().userId;
@@ -687,7 +691,7 @@ exports.triviaGame = functions.https.onRequest((request, response) => {
 
     let number;
 
-    // Answers in mathematical format are matched to values by API.AI
+    // Answers in mathematical format are matched to values by Dialogflow
     // Handle as special case by comparing raw input with expected value
     let found = false;
     if (!choice) {
@@ -939,7 +943,7 @@ exports.triviaGame = functions.https.onRequest((request, response) => {
     }));
 
     const ssmlResponse = new Ssml();
-    ssmlResponse.say(sprintf(getRandomPrompt(PROMPT_TYPES.END_PROMPTS), app.data.scor, app.data.gameLength));
+    ssmlResponse.say(sprintf(getRandomPrompt(PROMPT_TYPES.END_PROMPTS), app.data.score, app.data.gameLength));
     ssmlResponse.audio(getRandomAudio(AUDIO_TYPES.AUDIO_GAME_OUTRO), 'game ending');
     app.tell(ssmlResponse.toString());
   };
@@ -1188,7 +1192,7 @@ exports.triviaGame = functions.https.onRequest((request, response) => {
       handleAnswer(answer);
     } else {
       // Could be the entity key of another answer.
-      // For each synonymn of the entity key for the user's answer,
+      // For each synonym of the entity key for the user's answer,
       // check if it matches the synonyms of the expected answer.
       generateSynonyms([choice], (err, results) => {
         if (!err) {

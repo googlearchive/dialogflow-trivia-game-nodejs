@@ -20,7 +20,7 @@
 
 // Logging dependencies
 const logger = require('winston').loggers.get('DEFAULT_LOGGER');
-const logObject = require('./utils').logObject;
+const { logObject } = require('./utils');
 
 const SSML = class {
   constructor () {
