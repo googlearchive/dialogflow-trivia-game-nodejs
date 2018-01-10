@@ -1,6 +1,6 @@
 # Actions on Google: Trivia Game using Node.js
 
-The Trivia Game let's users play an interactive game with various personas. Includes classic game show sounds and humor, for a touch of nostalgia.
+The Trivia Game lets users play an interactive game with various personas. Includes classic game show sounds and humor, for a touch of nostalgia.
 
 You can also try out a hosted version of this game at [https://triviatemplate.com/](https://triviatemplate.com/).
 
