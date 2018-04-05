@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "actions-on-google": "^1.5.0",
-    "firebase-admin": "^4.2.1",
+    "firebase-admin": "^5.11.0",
     "firebase-encode": "0.0.5",
-    "firebase-functions": "^0.5.8",
+    "firebase-functions": "^1.0.0",
     "levenshtein": "^1.0.5",
     "sprintf-js": "^1.1.1",
     "winston": "^2.3.1"

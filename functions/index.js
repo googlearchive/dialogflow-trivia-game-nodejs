@@ -22,8 +22,8 @@ const { DialogflowApp } = require('actions-on-google');
 const functions = require('firebase-functions');
 const firebaseAdmin = require('firebase-admin');
 
-const firebaseConfig = functions.config().firebase;
-firebaseAdmin.initializeApp(firebaseConfig);
+const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
+firebaseAdmin.initializeApp();
 
 /**
  * (Optional) Change this to the url of your custom hosting site
@@ -31,7 +31,7 @@ firebaseAdmin.initializeApp(firebaseConfig);
  */
 const CUSTOM_HOSTING_URL = '';
 
-const HOSTING_URL = CUSTOM_HOSTING_URL || `https://${firebaseConfig.authDomain}`;
+const HOSTING_URL = CUSTOM_HOSTING_URL || `https://${firebaseConfig.projectId}.firebaseapp.com`;
 
 // Logging dependencies
 const winston = require('winston');
