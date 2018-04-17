@@ -1,3 +1,7 @@
+# Project Status
+
+This sample is no longer maintained. It's here for archive purposes only.
+
 # Actions on Google: Trivia Game using Node.js
 
 The Trivia Game lets users play an interactive game with various personas. Includes classic game show sounds and humor, for a touch of nostalgia.
